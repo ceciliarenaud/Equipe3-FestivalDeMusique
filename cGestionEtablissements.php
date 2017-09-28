@@ -100,7 +100,12 @@ function verifierDonneesEtabC($id, $nom, $adresseRue, $codePostal, $ville, $tel,
         if (!estChiffresOuEtLettres($id)) {
             ajouterErreur
                     ("L'identifiant doit comporter uniquement des lettres non accentuées et des chiffres");
-        } else {
+        } 
+        else if (!estChiffresEtLettres($nom)) {
+            ajouterErreur
+        ("Le nom doit comporter uniquement des lettres non accentuées et des chiffres");
+        }    
+        else {
             if (EtablissementDAO::isAnExistingId($id)) {
                 ajouterErreur("L'établissement $id existe déjà");
             }
