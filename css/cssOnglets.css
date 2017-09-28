@@ -16,9 +16,9 @@
 {
    /* Fond vert pâle (c'est la couleur de fond de l'onglet ouvert) 
    Ce fond sera recouvert par un Fond vert pour les onglets fermés */
-   background-color:#DDFF88;
+   background-color:CB1B3A;
    /* Couleur rouge */
-   color:#F50033;
+   color:#FFFFFF;
    float:left;
    margin:0px 0px 0px 0px;
    /* Bordure blanche */
@@ -37,7 +37,7 @@
 { 
    /* Effacement du trait inférieur (pour cela, on le met de la même couleur que
    le fond de la page) */
-   border-bottom:solid 2px #DDFF88;
+   border-bottom:solid 2px #C0C0C0;
    width:20%;
 }
 
@@ -46,8 +46,8 @@
 { 
    /* Effacement du trait inférieur et du trait de gauche (pour cela, on les met 
    de la même couleur que le fond de la page) */
-   border-bottom:solid 2px #DDFF88;
-   border-left:solid 2px #DDFF88;
+   border-bottom:solid 2px #C0C0C0;
+   border-left:solid 2px #C0C0C0;
    width:20%;
 }
 
@@ -55,9 +55,9 @@
 .menus .ongletPrem 
 { 
    /* Fond vert */
-   background-color:#CCFF50;
+   background-color:#CB1B3A;
    /* Couleur rouge */
-   color:#F50033;
+   color:#FFFFFF;
    margin:0px 0px 0px 0px;
 }
 
@@ -65,9 +65,9 @@
 .menus .ongletPrem a 
 { 
    /* Fond vert */
-   background-color:#CCFF50;
+   background-color:#CB1B3A;
    /* Couleur rouge */
-   color:#F50033;
+   color:#FFFFFF;
    /* Pas de soulignement du lien */
    text-decoration:none;
 }
@@ -76,22 +76,22 @@
 .menus .onglet 
 { 
    /* Fond vert */
-   background-color:#CCFF50;
+   background-color:#CB1B3A;
    /* Couleur rouge */
-   color:#F50033;
+   color:#FFFFFF;
    margin:0px 0px 0px 0px;
    /* Effacement du trait de gauche (pour cela, on le met de la même couleur que 
    le fond de l'onglet) */
-   border-left:solid 2px #CCFF50;
+   border-left:solid 2px #CB1B3A;
 }
 
 /* Style du lien d'un onglet non ouvert cas autres onglets que le 1er */
 .menus .onglet a 
 { 
    /* Fond vert */
-   background-color:#CCFF50;
+   background-color:#CB1B3A;
    /* Couleur rouge */
-   color:#F50033;
+   color:#FFFFFF;
    /* Pas de soulignement du lien */
    text-decoration:none; 
 }

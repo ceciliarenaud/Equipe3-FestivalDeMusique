@@ -3,7 +3,7 @@
 /* Style de base pour la page (couleur fond : vert pâle, couleur texte : noir) */
 .basePage 
 {
-   background-color:#DDFF88;
+   background-color:#C0C0C0;
    color:black;
    font:11px Arial, Helvetica, sans-serif;
 }
@@ -11,11 +11,19 @@
 /* Style pour le titre (couleur du texte : rouge) */
 .titre 
 {
-   background-color:#DDFF88;
-   color:#F50033;
+   background-color:#C0C0C0;
+   color:CB1B3A;
    font:30px Arial, Helvetica, sans-serif;
    text-align:center;
+   
 }
+ .baniere {
+   position : absolute;
+  
+   width:600px;
+   height:400px;
+   left : 100%;
+  }
 
 /* Style pour le texte de 2ème niveau du titre */
 .texteNiveau2
@@ -27,11 +35,11 @@
 mise en gras et en italique) */
 .texteAccueil
 {
-   background-color:#DDFF88;
-   color:#000099;       
-   font:14px Georgia, "Times New Roman", Times, serif;
+   background-color:#C0C0C0;
+   color:CB1B3A;       
+   font:12px Georgia, "Comic sans MS", Comic, serif;
    font-weight:bold;
-   font-style:italic;
+   font-style:normal;
    text-align:left;
 }
 
@@ -124,7 +132,7 @@ tr.ligneTabNonQuad td
 /* Style pour les messages d'erreur affichés en bas de page (couleur : bleu) */
 .msgErreur
 {
-   background-color:#DDFF88;
+   background-color:#C0C0C0;
    color:#3366CC;
    font-size:14px;
 }
