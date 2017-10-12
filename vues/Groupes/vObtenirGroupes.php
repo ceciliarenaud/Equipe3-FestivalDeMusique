@@ -1,15 +1,15 @@
 <?php
-use modele\dao\GroupesDAO;
+use modele\dao\GroupeDAO;
 use modele\dao\AttributionDAO;
 use modele\dao\Bdd;
 require_once __DIR__.'/../../includes/autoload.php';
 Bdd::connecter();
 
-include("includes/attributionDAO.class.php");
+include("includes/_debut.inc.php");
 
-// AFFICHER L'ENSEMBLE DES Groupes
+// AFFICHER L'ENSEMBLE DES GROUPES
 // CETTE PAGE CONTIENT UN TABLEAU CONSTITUÉ D'1 LIGNE D'EN-TÊTE ET D'1 LIGNE PAR
-// Groupes
+// GROUPES
 
 echo "
 <br>
@@ -19,8 +19,8 @@ echo "
       <td colspan='4'><strong>Groupes</strong></td>
    </tr>";
 
-$lesEtablissements = GroupeDAO::getAll();
-// BOUCLE SUR LES ÉTABLISSEMENTS
+$lesGroupes = GroupeDAO::getAll();
+// BOUCLE SUR LES GROUPES
 foreach ($lesGroupes as $unGroupe) {
     $id = $unGroupe->getId();
     $nom = $unGroupe->getNom();
@@ -29,16 +29,16 @@ foreach ($lesGroupes as $unGroupe) {
          <td width='52%'>$nom</td>
          
          <td width='16%' align='center'> 
-         <a href='cGestionGroupes.php?action=detailEtab&id=$id'>
+         <a href='cGestionGroupes.php?action=detailGroupe&id=$id'>
          Voir détail</a></td>
          
          <td width='16%' align='center'> 
-         <a href='cGestionGroupes.php?action=demanderModifierEtab&id=$id'>
+         <a href='cGestionGroupes.php?action=demanderModifierGroupe&id=$id'>
          Modifier</a></td>";
 
-    // S'il existe déjà des attributions pour l'établissement, il faudra
-    // d'abord les supprimer avant de pouvoir supprimer l'établissement
-//    if (!existeAttributionsEtab($connexion, $id)) {
+    // S'il existe déjà des attributions pour le groupe , il faudra
+    // d'abord les supprimer avant de pouvoir supprimer le groupe
+//    if (!existeAttributionsGroupe($connexion, $id)) {
     $lesAttributionsDeCeGroupe = AttributionDAO::getAllByIdEtab($id);
     if (count($lesAttributionsDeCeGroupe)==0) {
         echo "

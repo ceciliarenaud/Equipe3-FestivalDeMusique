@@ -23,32 +23,32 @@ $action = $_REQUEST['action'];
 // Aiguillage selon l'étape
 switch ($action) {
     case 'initial' :
-        include("vues/GestionGroupe/vObtenirGroupe.php");
+        include("vues/Groupes/vObtenirGroupes.php");
         break;
 
     case 'detailGroupe':
         $id = $_REQUEST['id'];
-        include("vues/GestionGroupe/vObtenirDetailGroupe.php");
+        include("vues/Groupes/vObtenirDetailGroupe.php");
         break;
 
     case 'demanderSupprimerGroupe':
         $id = $_REQUEST['id'];
-        include("vues/GestionEGroupe/vSupprimerGroupe.php");
+        include("vues/Groupes/vSupprimerGroupe.php");
         break;
 
     case 'demanderCreerGroupe':
-        include("vues/GestionGroupe/vCreerModifierGroupe.php");
+        include("vues/Groupes/vCreerModifierGroupe.php");
         break;
 
     case 'demanderModifierGroupe':
         $id = $_REQUEST['id'];
-        include("vues/GestionGroupe/vCreerModifierGroupe.php");
+        include("vues/Groupes/vCreerModifierGroupe.php");
         break;
 
     case 'validerSupprimerGroupe':
         $id = $_REQUEST['id'];
         GroupeDAO::delete($id);
-        include("vues/GestionGroupe/vObtenirGroupe.php");
+        include("vues/Groupes/vObtenirGroupe.php");
         break;
 
     case 'validerCreerGroupe':case 'validerModifierGroupe':
@@ -69,18 +69,18 @@ switch ($action) {
             if (nbErreurs() == 0) {
                 $unGroupe = new Groupe($id, $nom, $adresseRue, $codePostal, $ville, $tel, $adresseElectronique, $type, $civiliteResponsable, $nomResponsable, $prenomResponsable);
                 GroupeDAO::insert($unGroupe);
-                include("vues/GestionGroupe/vObtenirGroupe.php");
+                include("vues/Groupes/vObtenirGroupe.php");
             } else {
-                include("vues/GestionGroupe/vCreerModifierGroupe.php");
+                include("vues/Groupes/vCreerModifierGroupe.php");
             }
         } else {
             verifierDonneesGroupeM($id, $nom, $adresseRue, $codePostal, $ville, $tel,$adresseElectronique, $nomResponsable);
             if (nbErreurs() == 0) {
                 $unGroupe = new Groupe($id, $nom, $adresseRue, $codePostal, $ville, $tel, $adresseElectronique, $type, $civiliteResponsable, $nomResponsable, $prenomResponsable);
                 GroupeDAO::update($id, $unGroupe);
-                include("vues/GestionGroupe/vObtenirGroupe.php");
+                include("vues/Groupes/vObtenirGroupe.php");
             } else {
-                include("vues/GestionGroupe/vCreerModifierGroupe.php");
+                include("vues/Groupes/vCreerModifierGroupe.php");
             }
         }
         break;
