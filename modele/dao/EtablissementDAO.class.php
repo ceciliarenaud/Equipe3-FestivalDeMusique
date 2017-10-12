@@ -104,7 +104,7 @@ class EtablissementDAO {
      * @return boolean =FALSE si l'opération échoue
      */
     public static function insert(Etablissement $objet) {
-        $requete = "INSERT INTO Etablissement VALUES (:id, :nom, :rue, :cdp, :ville, :tel, :email, :type, :civ, :nomResp, :prenomResp)";
+        $requete = "INSERT INTO Etablissement VALUES (:id, :nom, :rue, :cdp, :ville, :tel, :email, :type, :civ, UPPER(:nomResp), :prenomResp)";
         $stmt = Bdd::getPdo()->prepare($requete);
         self::metierVersEnreg($objet, $stmt);
         $ok = $stmt->execute();
@@ -122,7 +122,7 @@ class EtablissementDAO {
         $requete = "UPDATE  Etablissement SET NOM=:nom, ADRESSERUE=:rue,
            CODEPOSTAL=:cdp, VILLE=:ville, TEL=:tel,
            ADRESSEELECTRONIQUE=:email, TYPE=:type,
-           CIVILITERESPONSABLE=:civ, NOMRESPONSABLE=:nomResp, PRENOMRESPONSABLE=:prenomResp 
+           CIVILITERESPONSABLE=:civ, NOMRESPONSABLE=UPPER(:nomResp), PRENOMRESPONSABLE=:prenomResp 
            WHERE ID=:id";
         $stmt = Bdd::getPdo()->prepare($requete);
         self::metierVersEnreg($objet, $stmt);
