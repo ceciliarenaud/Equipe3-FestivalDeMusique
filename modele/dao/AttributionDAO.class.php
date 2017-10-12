@@ -85,6 +85,21 @@ class AttributionDAO {
         }
         return $lesObjets;
     }
+    
+       
+    public static function getAllByIdGroupes($idGroupes) {
+        $lesObjets = array();
+        $requete = "SELECT * FROM Attribution WHERE IDGROUPES = :idGroupes ";
+        $stmt = Bdd::getPdo()->prepare($requete);
+        $stmt->bindParam(':idGroupes', $idGroupes);
+        $ok = $stmt->execute();
+        if ($ok) {
+            while ($enreg = $stmt->fetch(PDO::FETCH_ASSOC)) {
+                $lesObjets[] = self::enregVersMetier($enreg);
+            }
+        }
+        return $lesObjets;
+    }
 
     /**
      * Liste des objets Attribution concernant un établissement donné
