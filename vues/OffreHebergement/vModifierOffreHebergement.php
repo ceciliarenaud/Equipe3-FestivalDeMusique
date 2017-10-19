@@ -29,10 +29,10 @@ $unEtab = EtablissementDAO::getOneById($idEtab);
 // de chambre...
 $i = 0;
 
-$nom = $unEtab->getNom();
+$nomLieu = $unEtab->getNom();
 
 // AFFICHAGE DU NOM DE L'ÉTABLISSEMENT
-echo "<br><strong>$nom</strong><br><br>
+echo "<br><strong>$nomLieu</strong><br><br>
       
    <table width='45%' cellspacing='0' cellpadding='0' class='tabQuadrille'>";
 

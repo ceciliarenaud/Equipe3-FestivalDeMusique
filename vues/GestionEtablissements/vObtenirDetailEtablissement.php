@@ -13,7 +13,7 @@ include("includes/_debut.inc.php");
 
 $unEtab = EtablissementDAO::getOneById($id);
 /* @var $unEtab Etablissement  */
-$nom = $unEtab->getNom();
+$nomLieu = $unEtab->getNom();
 $adresseRue = $unEtab->getAdresse();
 $codePostal = $unEtab->getCdp();
 $ville = $unEtab->getVille();
@@ -30,7 +30,7 @@ echo "
 <table width='60%' cellspacing='0' cellpadding='0' class='tabNonQuadrille'>
    
    <tr class='enTeteTabNonQuad'>
-      <td colspan='3'><strong>$nom</strong></td>
+      <td colspan='3'><strong>$nomLieu</strong></td>
    </tr>
    <tr class='ligneTabNonQuad'>
       <td  width='20%'> Id: </td>

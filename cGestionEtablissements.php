@@ -53,7 +53,7 @@ switch ($action) {
 
     case 'validerCreerEtab':case 'validerModifierEtab':
         $id = $_REQUEST['id'];
-        $nom = $_REQUEST['nom'];
+        $nomLieu = $_REQUEST['nom'];
         $adresseRue = $_REQUEST['adresseRue'];
         $codePostal = $_REQUEST['codePostal'];
         $ville = $_REQUEST['ville'];
@@ -65,18 +65,18 @@ switch ($action) {
         $prenomResponsable = $_REQUEST['prenomResponsable'];
 
         if ($action == 'validerCreerEtab') {
-            verifierDonneesEtabC($id, $nom, $adresseRue, $codePostal, $ville, $tel, $adresseElectronique, $nomResponsable);
+            verifierDonneesEtabC($id, $nomLieu, $adresseRue, $codePostal, $ville, $tel, $adresseElectronique, $nomResponsable);
             if (nbErreurs() == 0) {
-                $unEtab = new Etablissement($id, $nom, $adresseRue, $codePostal, $ville, $tel, $adresseElectronique, $type, $civiliteResponsable, $nomResponsable, $prenomResponsable);
+                $unEtab = new Etablissement($id, $nomLieu, $adresseRue, $codePostal, $ville, $tel, $adresseElectronique, $type, $civiliteResponsable, $nomResponsable, $prenomResponsable);
                 EtablissementDAO::insert($unEtab);
                 include("vues/GestionEtablissements/vObtenirEtablissements.php");
             } else {
                 include("vues/GestionEtablissements/vCreerModifierEtablissement.php");
             }
         } else {
-            verifierDonneesEtabM($id, $nom, $adresseRue, $codePostal, $ville, $tel,$adresseElectronique, $nomResponsable);
+            verifierDonneesEtabM($id, $nomLieu, $adresseRue, $codePostal, $ville, $tel,$adresseElectronique, $nomResponsable);
             if (nbErreurs() == 0) {
-                $unEtab = new Etablissement($id, $nom, $adresseRue, $codePostal, $ville, $tel, $adresseElectronique, $type, $civiliteResponsable, $nomResponsable, $prenomResponsable);
+                $unEtab = new Etablissement($id, $nomLieu, $adresseRue, $codePostal, $ville, $tel, $adresseElectronique, $type, $civiliteResponsable, $nomResponsable, $prenomResponsable);
                 EtablissementDAO::update($id, $unEtab);
                 include("vues/GestionEtablissements/vObtenirEtablissements.php");
             } else {

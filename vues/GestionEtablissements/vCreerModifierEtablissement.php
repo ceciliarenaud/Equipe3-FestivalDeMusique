@@ -13,7 +13,7 @@ include("includes/_debut.inc.php");
 // les champs à vide sinon on affichera les valeurs précédemment saisies
 if ($action == 'demanderCreerEtab') {
     $id = '';
-    $nom = '';
+    $nomLieu = '';
     $adresseRue = '';
     $ville = '';
     $codePostal = '';
@@ -31,7 +31,7 @@ if ($action == 'demanderCreerEtab') {
 if ($action == 'demanderModifierEtab') {
     $unEtab = EtablissementDAO::getOneById($id);
     /* @var $unEtab Etablissement  */
-    $nom = $unEtab->getNom();
+    $nomLieu = $unEtab->getNom();
     $adresseRue = $unEtab->getAdresse();
     $codePostal = $unEtab->getCdp();
     $ville = $unEtab->getVille();
@@ -50,7 +50,7 @@ if ($action == 'demanderCreerEtab' || $action == 'validerCreerEtab') {
     $action = "validerCreerEtab";
 } else {
     $creation = false;
-    $message = "$nom ($id)";            // Alimentation du message de l'en-tête
+    $message = "$nomLieu ($id)";            // Alimentation du message de l'en-tête
     $action = "validerModifierEtab";
 }
 
@@ -89,7 +89,7 @@ if ($creation) {
 echo '
       <tr class="ligneTabNonQuad">
          <td> Nom*: </td>
-         <td><input type="text" value="' . $nom . '" name="nom" size="50" 
+         <td><input type="text" value="' . $nomLieu . '" name="nom" size="50" 
          maxlength="45"></td>
       </tr>
       <tr class="ligneTabNonQuad">

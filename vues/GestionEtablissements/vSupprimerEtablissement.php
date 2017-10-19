@@ -12,9 +12,9 @@ include("includes/_debut.inc.php");
 $id = $_REQUEST['id'];  // Non obligatoire mais plus propre
 $unEtab = EtablissementDAO::getOneById($id);
 /* @var $unEtab Etablissement  */
-$nom = $unEtab->getNom();
+$nomLieu = $unEtab->getNom();
 echo "
-<br><center>Voulez-vous vraiment supprimer l'établissement $nom ?
+<br><center>Voulez-vous vraiment supprimer l'établissement $nomLieu ?
 <h3><br>
 <a href='cGestionEtablissements.php?action=validerSupprimerEtab&id=$id'>Oui</a>
 &nbsp; &nbsp; &nbsp; &nbsp;

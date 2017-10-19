@@ -53,7 +53,7 @@ switch ($action) {
 
     case 'validerCreerGroupe':case 'validerModifierGroupe':
         $id = $_REQUEST['id'];
-        $nom = $_REQUEST['nom'];
+        $nomLieu = $_REQUEST['nom'];
         $adresseRue = $_REQUEST['adresseRue'];
         $codePostal = $_REQUEST['codePostal'];
         $ville = $_REQUEST['ville'];
@@ -65,18 +65,18 @@ switch ($action) {
         $prenomResponsable = $_REQUEST['prenomResponsable'];
 
         if ($action == 'validerCreerGroupe') {
-            verifierDonneesGroupeC($id, $nom, $adresseRue, $codePostal, $ville, $tel, $adresseElectronique, $nomResponsable);
+            verifierDonneesGroupeC($id, $nomLieu, $adresseRue, $codePostal, $ville, $tel, $adresseElectronique, $nomResponsable);
             if (nbErreurs() == 0) {
-                $unGroupe = new Groupe($id, $nom, $adresseRue, $codePostal, $ville, $tel, $adresseElectronique, $type, $civiliteResponsable, $nomResponsable, $prenomResponsable);
+                $unGroupe = new Groupe($id, $nomLieu, $adresseRue, $codePostal, $ville, $tel, $adresseElectronique, $type, $civiliteResponsable, $nomResponsable, $prenomResponsable);
                 GroupeDAO::insert($unGroupe);
                 include("vues/Groupes/vObtenirGroupe.php");
             } else {
                 include("vues/Groupes/vCreerModifierGroupe.php");
             }
         } else {
-            verifierDonneesGroupeM($id, $nom, $adresseRue, $codePostal, $ville, $tel,$adresseElectronique, $nomResponsable);
+            verifierDonneesGroupeM($id, $nomLieu, $adresseRue, $codePostal, $ville, $tel,$adresseElectronique, $nomResponsable);
             if (nbErreurs() == 0) {
-                $unGroupe = new Groupe($id, $nom, $adresseRue, $codePostal, $ville, $tel, $adresseElectronique, $type, $civiliteResponsable, $nomResponsable, $prenomResponsable);
+                $unGroupe = new Groupe($id, $nomLieu, $adresseRue, $codePostal, $ville, $tel, $adresseElectronique, $type, $civiliteResponsable, $nomResponsable, $prenomResponsable);
                 GroupeDAO::update($id, $unGroupe);
                 include("vues/Groupes/vObtenirGroupe.php");
             } else {

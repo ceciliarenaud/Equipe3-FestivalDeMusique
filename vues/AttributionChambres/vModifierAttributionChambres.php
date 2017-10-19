@@ -51,12 +51,12 @@ echo "
 
 // BOUCLE SUR LES ÉTABLISSEMENTS
 foreach ($lesEtabOffrantChambres as $unEtab) {
-    $nom = $unEtab->getNom();
+    $nomLieu = $unEtab->getNom();
 
     // La colonne d'en-tête établissement regroupe autant de colonnes 
     // qu'il existe de types de chambres 
     echo "
-         <td width='$pourcCol%' colspan='$nbTypesChambres'><center>$nom</center>
+         <td width='$pourcCol%' colspan='$nbTypesChambres'><center>$nomLieu</center>
          </td>";
 }
 echo "
@@ -124,10 +124,10 @@ $lesGroupes = GroupeDAO::getAllToHost();
 // BOUCLE SUR LES GROUPES À HÉBERGER 
 foreach ($lesGroupes as $unGroupe) {
     $idGroupe = $unGroupe->getId();
-    $nom = $unGroupe->getNom();
+    $nomLieu = $unGroupe->getNom();
     echo "
       <tr class='ligneTabQuad'>
-         <td align='center' width='25%'>$nom</td>";
+         <td align='center' width='25%'>$nomLieu</td>";
 
     // BOUCLE SUR LES ÉTABLISSEMENTS
     foreach ($lesEtabOffrantChambres as $unEtab) {

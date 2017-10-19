@@ -23,10 +23,10 @@ $lesGroupes = GroupeDAO::getAll();
 // BOUCLE SUR LES GROUPES
 foreach ($lesGroupes as $unGroupe) {
     $id = $unGroupe->getId();
-    $nom = $unGroupe->getNom();
+    $nomLieu = $unGroupe->getNom();
     echo "
 		<tr class='ligneTabNonQuad'>
-         <td width='52%'>$nom</td>
+         <td width='52%'>$nomLieu</td>
          
          <td width='16%' align='center'> 
          <a href='cGestionGroupes.php?action=detailGroupe&id=$id'>

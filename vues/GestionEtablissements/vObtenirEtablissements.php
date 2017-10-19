@@ -23,10 +23,10 @@ $lesEtablissements = EtablissementDAO::getAll();
 // BOUCLE SUR LES ÉTABLISSEMENTS
 foreach ($lesEtablissements as $unEtablissement) {
     $id = $unEtablissement->getId();
-    $nom = $unEtablissement->getNom();
+    $nomLieu = $unEtablissement->getNom();
     echo "
 		<tr class='ligneTabNonQuad'>
-         <td width='52%'>$nom</td>
+         <td width='52%'>$nomLieu</td>
          
          <td width='16%' align='center'> 
          <a href='cGestionEtablissements.php?action=detailEtab&id=$id'>

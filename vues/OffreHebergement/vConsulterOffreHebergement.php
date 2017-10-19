@@ -23,11 +23,11 @@ if ($nbEtab != 0 && $nbTypesChambres != 0) {
     // BOUCLE SUR LES ÉTABLISSEMENTS
     foreach ($lesEtablissements as $unEtablissement) {
         $idEtab = $unEtablissement->getId();
-        $nom = $unEtablissement->getNom();
+        $nomLieu = $unEtablissement->getNom();
 
         // AFFICHAGE DU NOM DE L'ÉTABLISSEMENT ET D'UN LIEN VERS LE FORMULAIRE DE
         // MODIFICATION
-        echo "<strong>$nom</strong><br>
+        echo "<strong>$nomLieu</strong><br>
       <a href='cOffreHebergement.php?action=demanderModifierOffre&idEtab=$idEtab'>
       Modifier</a>
    
