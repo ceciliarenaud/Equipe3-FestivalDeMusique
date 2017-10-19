@@ -139,8 +139,8 @@ require_once __DIR__ . '/../includes/autoload.php';
             $ok = $ok && ! $objet = new Lieu($id, 'LE GRAND REX', '35 rue de la Papouasie', '1500');
             $ok = LieuDAO::isAnExistingName(false, $id, $nomLieu);
             // en mode création (1er paramètre = true)
-            $ok = $ok && EtablissementDAO::isAnExistingName(true, "0123456", $nomLieu);
-            $ok = $ok && !EtablissementDAO::isAnExistingName(true, "0123456", "Restaurant");
+            $ok = $ok && LieuDAO::isAnExistingName(true, "0123456", $nomLieu);
+            $ok = $ok && !LieutDAO::isAnExistingName(true, "0123456", "Restaurant");
             if ($ok) {
                 echo "<h4>ooo test réussi ooo</h4>";
             } else {
