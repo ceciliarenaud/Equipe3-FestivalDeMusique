@@ -1,99 +1,60 @@
 <?php
 namespace modele\metier;
-
 /**
- * Description of Representation
- * un groupe musical se produisant au festival
+ * Description of Etablissement
+ * un établissement a des capacités d'hébergement à offrir au festival
  * @author prof
  */
 class Representation {
-    /**
-     * identifiant de la représentation
-     * @var string
-     */
     private $id;
-    /**
-     * lieu de la représentation
-     * @var string
-     */
-    private $leLieu;
-    /**
-     * nom du groupe 
-     * @var string 
-     */
-    private $leGroupe;
-    /**
-     * date de la représentation
-     * @var string
-     */
-    private $dateRepresentation;
-    /**
-     * heure de début
-     * @var integer
-     */
-    private $heureDebut;
-    /**
-     * heure de fin
-     * @var string 
-     */
-    private $heureFin;
-   
-
-    function __construct($id, $leLieu, $leGroupe, $dateRepresentation, $heureDebut, $heureFin) {
-        $this->id = $id;
-        $this->leLieu = $leLieu;
-        $this->leGroupe = $leGroupe;
-        $this->dateRepresentation = $dateRepresentation;
-        $this->heureDebut = $heureDebut;
-        $this->heureFin = $heureFin;
+    private $date;
+    private $lieu;
+    private $groupe;
+    private $heure_debut;
+    private $heure_fin;
+    
+    function __construct($id, $date, $lieu, $groupe, $heure_debut, $heure_fin) {
+        $this->id=$id;
+        $this->date = $date;
+        $this->lieu = $lieu;
+        $this->groupe = $groupe;
+        $this->heure_debut = $heure_debut;
+        $this->heure_fin = $heure_fin;
     }
-
     function getId() {
         return $this->id;
     }
-
-    function getLeLieu() {
-        return $this->leLieu;
+    function getDate() {
+        return $this->date;
     }
-
-    function getLeGroupe() {
-        return $this->leGroupe;
+    function getLieu() {
+        return $this->lieu;
     }
-
-    function getDateRepresentation() {
-        return $this->dateRepresentation;
+    function getGroupe() {
+        return $this->groupe;
     }
-
-    function getHeureDebut() {
-        return $this->heureDebut;
+    function getHeure_debut() {
+        return $this->heure_debut;
     }
-
-    function getHeureFin() {
-        return $this->heureFin;
+    function getHeure_fin() {
+        return $this->heure_fin;
     }
-
     function setId($id) {
         $this->id = $id;
+       }
+    function setDate($date) {
+        $this->date = $date;
     }
-
-    function setLeLieu($leLieu) {
-        $this->leLieu = $leLieu;
+    function setLieu($lieu) {
+        $this->lieu = $lieu;
     }
-
-    function setLeGroupe($leGroupe) {
-        $this->leGroupe = $leGroupe;
+    function setGroupe($groupe) {
+        $this->groupe = $groupe;
     }
-
-    function setDateRepresentation($dateRepresentation) {
-        $this->dateRepresentation = $dateRepresentation;
+    function setHeure_debut($heure_debut) {
+        $this->heure_debut = $heure_debut;
     }
-
-    function setHeureDebut($heureDebut) {
-        $this->heureDebut = $heureDebut;
+    function setHeure_fin($heure_fin) {
+        $this->heure_fin = $heure_fin;
     }
-
-    function setHeureFin($heureFin) {
-        $this->heureFin = $heureFin;
-    }
-
 }
