@@ -1,9 +1,7 @@
 <?php
 namespace modele\dao;
-
 use modele\metier\Groupe;
 use PDO;
-
 /**
  * Description of GroupeDAO
  * Classe métier :  Groupe
@@ -11,8 +9,6 @@ use PDO;
  * @version 2017
  */
 class GroupeDAO {
-
-
     /**
      * Instancier un objet de la classe Groupe à partir d'un enregistrement de la table GROUPE
      * @param array $enreg
@@ -27,11 +23,8 @@ class GroupeDAO {
         $nomPays = $enreg['NOMPAYS'];
         $hebergement = $enreg['HEBERGEMENT'];
         $unGroupe = new Groupe($id, $nom, $identite, $adresse, $nbPers, $nomPays, $hebergement);
-
         return $unGroupe;
     }
-
-
     /**
      * Retourne la liste de tous les groupes
      * @return array tableau d'objets de type Groupe
@@ -50,7 +43,6 @@ class GroupeDAO {
         }
         return $lesObjets;
     }
-
     /**
      * Recherche un groupe selon la valeur de son identifiant
      * @param string $id
@@ -68,8 +60,6 @@ class GroupeDAO {
         }
         return $objetConstruit;
     }
-
-
     /**
      * Retourne la liste des groupes attribués à un établissement donné
      * @param string $idEtab
@@ -95,7 +85,6 @@ class GroupeDAO {
         } 
         return $lesGroupes;
     }
-
     
     /**
      * Retourne la liste des groupes souhaitant un hébergement, ordonnée par id
@@ -113,8 +102,6 @@ class GroupeDAO {
         }
         return $lesGroupes;
     }
-
-
     
     
 }

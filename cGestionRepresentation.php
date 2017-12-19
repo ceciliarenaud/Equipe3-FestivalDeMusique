@@ -19,7 +19,7 @@ $action = $_REQUEST['action'];
 // Aiguillage selon l'étape
 switch ($action) {
     case 'initial' :
-        include("vues/GestionRepresentation/vObtenirRepresentation.php");
+        include("vues/ConsultationRepresentation/vConsultationRepresentation.php");
         break;
 }
 // Fermeture de la connexion au serveur MySql
